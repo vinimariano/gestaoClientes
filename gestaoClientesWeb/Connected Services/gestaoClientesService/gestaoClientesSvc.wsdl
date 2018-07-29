@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="gestaoClientesSvc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/gestaoClientes/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/gestaoClientes/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/gestaoClientes/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/gestaoClientesSvcLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IgestaoClientes_ListTipoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListTipoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_ListTipoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListTipoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_ListSituacaoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListSituacaoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_ListSituacaoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListSituacaoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_ListCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_ListCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_CreateCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_CreateCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IgestaoClientes">
+    <wsdl:operation name="ListTipoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/ListTipoCliente" message="tns:IgestaoClientes_ListTipoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/ListTipoClienteResponse" message="tns:IgestaoClientes_ListTipoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSituacaoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/ListSituacaoCliente" message="tns:IgestaoClientes_ListSituacaoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/ListSituacaoClienteResponse" message="tns:IgestaoClientes_ListSituacaoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/ListCliente" message="tns:IgestaoClientes_ListCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/ListClienteResponse" message="tns:IgestaoClientes_ListCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/CreateCliente" message="tns:IgestaoClientes_CreateCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/CreateClienteResponse" message="tns:IgestaoClientes_CreateCliente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IgestaoClientes" type="tns:IgestaoClientes">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListTipoCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/ListTipoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSituacaoCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/ListSituacaoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/ListCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/CreateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="gestaoClientesSvc">
+    <wsdl:port name="BasicHttpBinding_IgestaoClientes" binding="tns:BasicHttpBinding_IgestaoClientes">
+      <soap:address location="http://localhost:8733/gestaoClientes/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

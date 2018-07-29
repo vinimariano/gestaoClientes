@@ -41,6 +41,15 @@ namespace gestaoClientesSvcLib
             }
         }
 
+        public void CreateCliente(cliente novoCliente)
+        {
+            using (IDbConnection db = new SqlConnection(connection))
+            {
+                string readSp = "addCliente";
+                db.Execute(readSp, novoCliente, commandType: CommandType.StoredProcedure);
+            }
+        }
+
 
     }
 }

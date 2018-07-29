@@ -19,6 +19,9 @@ namespace gestaoClientesSvcLib
 
         [OperationContract]
         List<cliente> ListCliente();
+
+        [OperationContract]
+        void CreateCliente(cliente novoCliente);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
@@ -29,6 +32,8 @@ namespace gestaoClientesSvcLib
     {
         [DataMember]
         public int id { get; set; }
+        [DataMember]
+        public string nome { get; set; }
         [DataMember]
         public string cpf { get; set; }
         [DataMember]

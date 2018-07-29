@@ -6,3 +6,11 @@ C:\Projects\gestaoClientesAPI\gestaoClientesSvcLib\bin\Debug\Dapper.xml
 C:\Projects\gestaoClientesAPI\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.csprojResolveAssemblyReference.cache
 C:\Projects\gestaoClientesAPI\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.dll
 C:\Projects\gestaoClientesAPI\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.pdb
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\bin\Debug\gestaoClientesSvcLib.dll.config
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\bin\Debug\gestaoClientesSvcLib.dll
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\bin\Debug\gestaoClientesSvcLib.pdb
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\bin\Debug\Dapper.dll
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\bin\Debug\Dapper.xml
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.dll
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.pdb
+C:\Projects\gestaoClientes\gestaoClientesSvcLib\obj\Debug\gestaoClientesSvcLib.csprojResolveAssemblyReference.cache

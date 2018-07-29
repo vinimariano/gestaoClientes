@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/gestaoClientesSvcLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/gestaoClientesSvcLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOftipoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tipoCliente" nillable="true" type="tns:tipoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftipoCliente" nillable="true" type="tns:ArrayOftipoCliente" />
+  <xs:complexType name="tipoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tipoCliente" nillable="true" type="tns:tipoCliente" />
+  <xs:complexType name="ArrayOfsituacaoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="situacaoCliente" nillable="true" type="tns:situacaoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfsituacaoCliente" nillable="true" type="tns:ArrayOfsituacaoCliente" />
+  <xs:complexType name="situacaoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="situacaoCliente" nillable="true" type="tns:situacaoCliente" />
+  <xs:complexType name="ArrayOfcliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cliente" nillable="true" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcliente" nillable="true" type="tns:ArrayOfcliente" />
+  <xs:complexType name="cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="masculino" type="xs:boolean" />
+      <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="situacaoCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cliente" nillable="true" type="tns:cliente" />
+</xs:schema>
