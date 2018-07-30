@@ -157,10 +157,10 @@ namespace gestaoClientesWeb.gestaoClientesService {
         private string nomeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int situacaoClienteField;
+        private int situacaoClienteIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int tipoClienteField;
+        private int tipoClienteIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -225,27 +225,27 @@ namespace gestaoClientesWeb.gestaoClientesService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int situacaoCliente {
+        public int situacaoClienteId {
             get {
-                return this.situacaoClienteField;
+                return this.situacaoClienteIdField;
             }
             set {
-                if ((this.situacaoClienteField.Equals(value) != true)) {
-                    this.situacaoClienteField = value;
-                    this.RaisePropertyChanged("situacaoCliente");
+                if ((this.situacaoClienteIdField.Equals(value) != true)) {
+                    this.situacaoClienteIdField = value;
+                    this.RaisePropertyChanged("situacaoClienteId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tipoCliente {
+        public int tipoClienteId {
             get {
-                return this.tipoClienteField;
+                return this.tipoClienteIdField;
             }
             set {
-                if ((this.tipoClienteField.Equals(value) != true)) {
-                    this.tipoClienteField = value;
-                    this.RaisePropertyChanged("tipoCliente");
+                if ((this.tipoClienteIdField.Equals(value) != true)) {
+                    this.tipoClienteIdField = value;
+                    this.RaisePropertyChanged("tipoClienteId");
                 }
             }
         }
@@ -287,6 +287,24 @@ namespace gestaoClientesWeb.gestaoClientesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/CreateCliente", ReplyAction="http://tempuri.org/IgestaoClientes/CreateClienteResponse")]
         System.Threading.Tasks.Task CreateClienteAsync(gestaoClientesWeb.gestaoClientesService.cliente novoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/GetCliente", ReplyAction="http://tempuri.org/IgestaoClientes/GetClienteResponse")]
+        gestaoClientesWeb.gestaoClientesService.cliente GetCliente(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/GetCliente", ReplyAction="http://tempuri.org/IgestaoClientes/GetClienteResponse")]
+        System.Threading.Tasks.Task<gestaoClientesWeb.gestaoClientesService.cliente> GetClienteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/UpdateCliente", ReplyAction="http://tempuri.org/IgestaoClientes/UpdateClienteResponse")]
+        void UpdateCliente(gestaoClientesWeb.gestaoClientesService.cliente novoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/UpdateCliente", ReplyAction="http://tempuri.org/IgestaoClientes/UpdateClienteResponse")]
+        System.Threading.Tasks.Task UpdateClienteAsync(gestaoClientesWeb.gestaoClientesService.cliente novoCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/DeleteCliente", ReplyAction="http://tempuri.org/IgestaoClientes/DeleteClienteResponse")]
+        void DeleteCliente(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IgestaoClientes/DeleteCliente", ReplyAction="http://tempuri.org/IgestaoClientes/DeleteClienteResponse")]
+        System.Threading.Tasks.Task DeleteClienteAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -346,6 +364,30 @@ namespace gestaoClientesWeb.gestaoClientesService {
         
         public System.Threading.Tasks.Task CreateClienteAsync(gestaoClientesWeb.gestaoClientesService.cliente novoCliente) {
             return base.Channel.CreateClienteAsync(novoCliente);
+        }
+        
+        public gestaoClientesWeb.gestaoClientesService.cliente GetCliente(int id) {
+            return base.Channel.GetCliente(id);
+        }
+        
+        public System.Threading.Tasks.Task<gestaoClientesWeb.gestaoClientesService.cliente> GetClienteAsync(int id) {
+            return base.Channel.GetClienteAsync(id);
+        }
+        
+        public void UpdateCliente(gestaoClientesWeb.gestaoClientesService.cliente novoCliente) {
+            base.Channel.UpdateCliente(novoCliente);
+        }
+        
+        public System.Threading.Tasks.Task UpdateClienteAsync(gestaoClientesWeb.gestaoClientesService.cliente novoCliente) {
+            return base.Channel.UpdateClienteAsync(novoCliente);
+        }
+        
+        public void DeleteCliente(int id) {
+            base.Channel.DeleteCliente(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteClienteAsync(int id) {
+            return base.Channel.DeleteClienteAsync(id);
         }
     }
 }

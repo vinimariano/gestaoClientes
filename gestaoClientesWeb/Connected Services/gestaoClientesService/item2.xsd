@@ -38,8 +38,8 @@
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="masculino" type="xs:boolean" />
       <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="situacaoCliente" type="xs:int" />
-      <xs:element minOccurs="0" name="tipoCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="situacaoClienteId" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoClienteId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="cliente" nillable="true" type="tns:cliente" />

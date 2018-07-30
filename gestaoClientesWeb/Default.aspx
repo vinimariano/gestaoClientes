@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>GESTÃO DE CLIENTES</h1>
         <p class="lead">Sistema básico de gestão de clientes, desenvolvido por <a target="_blank" style="text-decoration:none" href="http://viniciusmarianoti.wordpress.com">Vinicius Mariano</a></p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Listar Clientes &raquo;</a></p>
+        <p><a href="/Clientes" class="btn btn-primary btn-lg">Listar Clientes &raquo;</a></p>
     </div>
 
 </asp:Content>

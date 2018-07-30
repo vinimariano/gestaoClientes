@@ -31,6 +31,24 @@
   <wsdl:message name="IgestaoClientes_CreateCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IgestaoClientes_GetCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_GetCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_UpdateCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_UpdateCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_DeleteCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCliente" />
+  </wsdl:message>
+  <wsdl:message name="IgestaoClientes_DeleteCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IgestaoClientes">
     <wsdl:operation name="ListTipoCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/ListTipoCliente" message="tns:IgestaoClientes_ListTipoCliente_InputMessage" />
@@ -47,6 +65,18 @@
     <wsdl:operation name="CreateCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/CreateCliente" message="tns:IgestaoClientes_CreateCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/CreateClienteResponse" message="tns:IgestaoClientes_CreateCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/GetCliente" message="tns:IgestaoClientes_GetCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/GetClienteResponse" message="tns:IgestaoClientes_GetCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/UpdateCliente" message="tns:IgestaoClientes_UpdateCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/UpdateClienteResponse" message="tns:IgestaoClientes_UpdateCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IgestaoClientes/DeleteCliente" message="tns:IgestaoClientes_DeleteCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IgestaoClientes/DeleteClienteResponse" message="tns:IgestaoClientes_DeleteCliente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IgestaoClientes" type="tns:IgestaoClientes">
@@ -80,6 +110,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateCliente">
       <soap:operation soapAction="http://tempuri.org/IgestaoClientes/CreateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/GetCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/UpdateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCliente">
+      <soap:operation soapAction="http://tempuri.org/IgestaoClientes/DeleteCliente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -4,11 +4,11 @@
     <h2>CLIENTES</h2>
 
     <br /><br />
-    <a href="~/NovoCliente" class="btn btn-sm">Adicionar Cliente</a>
+    <a href="NovoCliente" class="btn btn-sm">Adicionar Cliente</a>
 
-    <asp:GridView ID="GridView1" runat="server" Height="151px" Width="286px">
+    <asp:GridView ID="GridView1" runat="server" Height="151px" Width="286px" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
-            <%--<asp:BoundField  HeaderText="Descricao" />--%>
+            <asp:CommandField ButtonType="Button" HeaderText="Ações" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" />
         </Columns>
     </asp:GridView>
 
