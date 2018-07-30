@@ -46,7 +46,47 @@ namespace gestaoClientesSvcLib
             using (IDbConnection db = new SqlConnection(connection))
             {
                 string readSp = "addCliente";
-                db.Execute(readSp, novoCliente, commandType: CommandType.StoredProcedure);
+                db.Execute(readSp, new {nome = novoCliente.nome,
+                    cpf = novoCliente.cpf,
+                    masculino = novoCliente.masculino,
+                    tipoClienteId = novoCliente.tipoClienteId,
+                    situacaoClienteId = novoCliente.situacaoClienteId
+                }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public cliente GetCliente(int id)
+        {
+            using (IDbConnection db = new SqlConnection(connection))
+            {
+                string readSp = "getCliente";
+                return db.Query<cliente>(readSp, new {id = id }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            }
+        }
+
+        public void UpdateCliente(cliente novoCliente)
+        {
+            using (IDbConnection db = new SqlConnection(connection))
+            {
+                string readSp = "updateCliente";
+                db.Execute(readSp, new
+                {
+                    id = novoCliente.id,
+                    nome = novoCliente.nome,
+                    cpf = novoCliente.cpf,
+                    masculino = novoCliente.masculino,
+                    tipoClienteId = novoCliente.tipoClienteId,
+                    situacaoClienteId = novoCliente.situacaoClienteId
+                }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void DeleteCliente(int id)
+        {
+            using (IDbConnection db = new SqlConnection(connection))
+            {
+                string readSp = "deleteCliente";
+                db.Execute(readSp, new {id = id }, commandType: CommandType.StoredProcedure);
             }
         }
 
