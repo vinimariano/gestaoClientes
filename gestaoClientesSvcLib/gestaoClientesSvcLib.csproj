@@ -52,6 +52,7 @@
     <Compile Include="IgestaoClientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="gestaoClientesSvc.cs" />
+    <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

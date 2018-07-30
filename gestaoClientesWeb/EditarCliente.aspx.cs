@@ -40,17 +40,28 @@ namespace gestaoClientesWeb
                     cpf = TextBox2.Text,
                     masculino =
                    RadioButtonList1.SelectedValue == "Masculino",
-                    situacaoClienteId = int.Parse(DropDownList1.SelectedValue),
-                    tipoClienteId = int.Parse(DropDownList2.SelectedValue)
+                    situacaoClienteId = int.Parse(DropDownList2.SelectedValue),
+                    tipoClienteId = int.Parse(DropDownList1.SelectedValue)
                 };
 
             gestaoClientesService.IgestaoClientesClient api
                 = new gestaoClientesService.IgestaoClientesClient();
 
-            api.UpdateCliente(cliente);
-            Response.Redirect("Clientes.aspx");
+            try
+            {
+                api.UpdateCliente(cliente);
+                Response.Redirect("Clientes.aspx");
+            }
+            catch (Exception ex)
+            {
+                LabelError.Text = ex.Message;
+            }
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Clientes.aspx");
+        }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
         {

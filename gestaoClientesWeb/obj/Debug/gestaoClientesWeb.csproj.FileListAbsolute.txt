@@ -59,4 +59,3 @@ C:\Projects\gestaoClientes\gestaoClientesWeb\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\gestaoClientes\gestaoClientesWeb\bin\Microsoft.AI.Web.xml
 C:\Projects\gestaoClientes\gestaoClientesWeb\obj\Debug\gestaoClientesWeb.dll
 C:\Projects\gestaoClientes\gestaoClientesWeb\obj\Debug\gestaoClientesWeb.pdb
-C:\Projects\gestaoClientes\gestaoClientesWeb\obj\Debug\gestaoClientesWeb.csprojResolveAssemblyReference.cache

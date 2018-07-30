@@ -20,6 +20,7 @@ namespace gestaoClientesSvcLib
         [OperationContract]
         List<cliente> ListCliente();
 
+        //[FaultContract(typeof(AppException))]
         [OperationContract]
         void CreateCliente(cliente novoCliente);
 
@@ -52,6 +53,28 @@ namespace gestaoClientesSvcLib
         [DataMember]
         public int situacaoClienteId { get; set; }
     }
+
+    //[DataContract]
+    //public class AppException : System.Exception
+    //{
+    //    private string strMessage = "Um erro inesperado ocorreu. Tente mais tarde.";
+
+    //    /// <summary>
+    //    /// Creates a new instance of a App Exception
+    //    /// </summary>
+    //    public AppException()
+    //    { }
+
+    //    /// <summary>
+    //    /// Creates a new instance of a App Exception
+    //    /// </summary>
+    //    /// <param name="Message">Message to send as exception</param>
+    //    public AppException(string Message)
+    //    { strMessage = Message; }
+
+    //    public override string Message
+    //    { get { return strMessage; } }
+    //}
 
     [DataContract]
     public class tipoCliente

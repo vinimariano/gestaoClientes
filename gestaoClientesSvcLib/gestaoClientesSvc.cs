@@ -5,14 +5,15 @@ using System.Data.SqlClient;
 using System.Data;
 using Dapper;
 using System.Configuration;
+using System.ServiceModel;
 
 namespace gestaoClientesSvcLib
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class gestaoClientesSvc : IgestaoClientes
     {
-        private string connection =
-         "Data Source=localhost;Initial Catalog=gestaoClientes;Integrated Security=True;";
+        private string connection =           
+            ConfigurationManager.ConnectionStrings["gestaoClientes"].ConnectionString;           
 
         public List<tipoCliente> ListTipoCliente()
         {
@@ -43,15 +44,35 @@ namespace gestaoClientesSvcLib
 
         public void CreateCliente(cliente novoCliente)
         {
-            using (IDbConnection db = new SqlConnection(connection))
+           
+                if (!Validacao.IsCpf(novoCliente.cpf))
+                {
+                    throw new Exception("Cpf Inválido");
+                }
+                else if (ListCliente().Where(t => t.cpf.Trim().Replace("-", "").Replace(".", "")
+                 == novoCliente.cpf.Trim().Replace("-", "").Replace(".", "")
+                ).Any())
+                {
+                    throw new Exception("Cpf já existente no sistema.");
+                }
+            try
             {
-                string readSp = "addCliente";
-                db.Execute(readSp, new {nome = novoCliente.nome,
-                    cpf = novoCliente.cpf,
-                    masculino = novoCliente.masculino,
-                    tipoClienteId = novoCliente.tipoClienteId,
-                    situacaoClienteId = novoCliente.situacaoClienteId
-                }, commandType: CommandType.StoredProcedure);
+                using (IDbConnection db = new SqlConnection(connection))
+                {
+                    string readSp = "addCliente";
+                    db.Execute(readSp, new
+                    {
+                        nome = novoCliente.nome,
+                        cpf = novoCliente.cpf,
+                        masculino = novoCliente.masculino,
+                        tipoClienteId = novoCliente.tipoClienteId,
+                        situacaoClienteId = novoCliente.situacaoClienteId
+                    }, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao executar essa operação.");
             }
         }
 
@@ -66,27 +87,56 @@ namespace gestaoClientesSvcLib
 
         public void UpdateCliente(cliente novoCliente)
         {
-            using (IDbConnection db = new SqlConnection(connection))
-            {
-                string readSp = "updateCliente";
-                db.Execute(readSp, new
+           
+                if (!Validacao.IsCpf(novoCliente.cpf))
                 {
-                    id = novoCliente.id,
-                    nome = novoCliente.nome,
-                    cpf = novoCliente.cpf,
-                    masculino = novoCliente.masculino,
-                    tipoClienteId = novoCliente.tipoClienteId,
-                    situacaoClienteId = novoCliente.situacaoClienteId
-                }, commandType: CommandType.StoredProcedure);
+                    throw new Exception("Cpf Inválido");
+                }
+                else if (ListCliente().Where(t => t.cpf.Trim().Replace("-", "").Replace(".", "")
+                              == novoCliente.cpf.Trim().Replace("-", "").Replace(".", "")
+                            ).Any())
+                {
+                    if(ListCliente().Where(t => t.cpf.Trim().Replace("-", "").Replace(".", "")
+                              == novoCliente.cpf.Trim().Replace("-", "").Replace(".", "")
+                            ).FirstOrDefault().id != novoCliente.id)
+                        throw new Exception("Cpf já existente no sistema.");
+                }
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(connection))
+                {
+                    string readSp = "updateCliente";
+                    db.Execute(readSp, new
+                    {
+                        id = novoCliente.id,
+                        nome = novoCliente.nome,
+                        cpf = novoCliente.cpf,
+                        masculino = novoCliente.masculino,
+                        tipoClienteId = novoCliente.tipoClienteId,
+                        situacaoClienteId = novoCliente.situacaoClienteId
+                    }, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao executar essa operação.");
             }
         }
 
         public void DeleteCliente(int id)
         {
-            using (IDbConnection db = new SqlConnection(connection))
+            try
             {
-                string readSp = "deleteCliente";
-                db.Execute(readSp, new {id = id }, commandType: CommandType.StoredProcedure);
+                using (IDbConnection db = new SqlConnection(connection))
+                {
+                    string readSp = "deleteCliente";
+                    db.Execute(readSp, new { id = id }, commandType: CommandType.StoredProcedure);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao executar essa operação.");
             }
         }
 

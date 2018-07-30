@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="52e77a8b-be57-44bd-ad01-1b5913e183b3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="18c9346a-3339-4135-a9a8-e66d9374c873" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8733/gestaoClientes/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="gestaoClientesSvc.wsdl" MetadataType="Wsdl" ID="6d87a93f-44ff-42bb-a2a2-015d5e4bd73d" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="9e83b470-03d7-4625-af09-d0970272d83c" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?disco" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="30e03e43-3471-441e-89fa-11bfd04c20a5" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd0" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="61c7008b-4d69-4f8c-9258-a34f26c204ea" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="9898ce9d-5baf-4219-90ca-a3b1ba164ef2" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd2" />
+    <MetadataFile FileName="gestaoClientesSvc.wsdl" MetadataType="Wsdl" ID="6dca106e-dbb3-495a-a1f4-e60c91c4d182" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="d8b7f11d-5863-45ec-8e23-df588a6c0e8a" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b08b6181-39f4-4ca0-8fae-5d0a3cc5a7d7" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="27c64060-a3c4-495b-933e-0ace44fa4001" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="7716dbb6-7726-43c5-b877-3609ac45a6a8" SourceId="1" SourceUrl="http://localhost:8733/gestaoClientes/?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
