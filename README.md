@@ -1,5 +1,6 @@
 # gestaoClientes
-Sistema básico de gestão de clientes
+Sistema básico de gestão de clientes. Desenvolvido para teste de um processo seletivo (Julho/2018).
+(update)O teste foi aprovado.
 
 A connectionString está na linha 5 do app.config do projeto gestaoClientesSvcLib. A autenticação utilizada foi Windows Authentication.
 
